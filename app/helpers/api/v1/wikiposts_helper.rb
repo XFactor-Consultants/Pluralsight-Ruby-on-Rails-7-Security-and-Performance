@@ -1,2 +1,8 @@
-module Api::V1::WikipostsHelper
+# frozen_string_literal: true
+
+module Api
+  module V1
+    module WikipostsHelper
+    end
+  end
 end
