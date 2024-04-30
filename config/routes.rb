@@ -1,25 +1,28 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  devise_for :users
   resources :wiki_posts
-  namespace :wiki_posts do 
+  namespace :wiki_posts do
     get 'example'
-  end 
-  namespace :welcome do 
+  end
+  namespace :welcome do
     get 'index'
     get 'about'
     get 'archive'
-  end 
+  end
 
-  namespace :api do 
-    namespace :v1 do 
+  namespace :api do
+    namespace :v1 do
       get 'wiki_posts/xml', to: 'wiki_posts#xml_index'
       get 'wiki_posts/csv', to: 'wiki_posts#csv_index'
-      resources :wiki_posts 
-    end 
-    namespace :v2 do 
       resources :wiki_posts
-    end 
-  end 
-  
+    end
+    namespace :v2 do
+      resources :wiki_posts
+    end
+  end
+
   get '/about', to: redirect('/welcome/about')
-  root "welcome#index"
+  root 'welcome#index'
 end
