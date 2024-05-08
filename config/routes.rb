@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  resources :wiki_posts
+  resources :wiki_posts, registrations: { registrations: 'user/registrations' }
   namespace :wiki_posts do
     get 'example'
   end
